@@ -1,22 +1,24 @@
 <template>
- <div>
-
+ <div class="fondo">
+<div class="imagen" v-if="this.terminado == true">
+  <img style="width: 100%; height: 100%" alt="animales" src="../assets/zodiaco.jpg">
+</div>
 
    <div v-if="!empezado" class="animales">
-    <img class="img" alt="animales" src="../assets/zodiaco.jpg">
+    <!-- <img class="img" alt="animales" src="../assets/zodiaco.jpg"> -->
     <h1>Descubre de qué signo del zodiaco es tu pareja ideal</h1>
-    <p style="cursor: pointer"  @click="empezado = true; preguntas[0].seleccionada = true">Comenzar el test</p>
+    <p style="cursor: pointer; "  @click="empezado = true ; preguntas[0].seleccionada = true"><span style="border: 1px solid black; padding: 3px; margin;">Comenzar el test</span></p>
   </div>
 <div>
 <div  v-for="(pregunta, id) in preguntas" :key="id" >
   <div v-if="pregunta.seleccionada != false">
-    <img class="img" :src="require(`../assets/zodiaco2.jpg`)" alt="animales">
+    <!-- <img class="img" :src="require(`../assets/zodiaco2.jpg`)" alt="animales"> -->
     <div style="max-width:900px; margin: 0 auto">
     <h1>{{pregunta.texto}}</h1>
     </div>
     <!-- <h1>{{pregunta.model}}</h1> -->
     <div style="display: inline-block"  v-for="(respuesta, id) in pregunta.respuestas" :key="id" >
-      <input :id="pregunta.numero" type="radio" :name="pregunta.numero" @click="isCheck = true" :v-model="pregunta.model" :value="respuesta.value"> {{respuesta.texto}}
+      <input style="margin:1px 5px" :id="pregunta.numero" type="radio" :name="pregunta.numero" @click="isCheck = true" :v-model="pregunta.model" :value="respuesta.value"> {{respuesta.texto}}
     </div>
 <!--   <input :id="pregunta.numero" type="radio" :name="pregunta.numero" @click="isCheck = true" :v-model="pregunta.model" value="0">1
   <input :id="pregunta.numero" type="radio" :name="pregunta.numero" @click="isCheck = true" :v-model="pregunta.model" value="1">2
@@ -43,6 +45,8 @@
   <h1>{{animal.nombre.toUpperCase()}}</h1>
   <img class="img" :src="require(`../assets/zodiaco/${animal.nombre}.jpg`)">
   <div style="max-width: 900px; margin: 0 auto"><h3>{{animal.descripcion}}.</h3></div>
+
+  <router-link to="/">Volver al inicio</router-link>
 </div>
 </div>
 
@@ -55,6 +59,7 @@ export default {
     return {
       wp: "@/assets/wallp.jpg",
       empezado: false,
+      terminado: true,
       primera: null,
       segunda: null,
       tercera: null,
@@ -617,6 +622,7 @@ export default {
     },
     terminarTest() {
       this.resultados = true
+      this.terminado = !this.terminado
       this.preguntas[this.preguntas.length -1].seleccionada = false
       console.log(this.animales);
       
@@ -636,8 +642,24 @@ export default {
 </script>
 
 <style scoped>
-.img {
-  max-width: 100%;
+.fondo {
+  /* background-image: url("../assets/animales_test.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;  */
   /* height: 50vh; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
+.imagen {
+  width: 100%;
+  height: 60vh;
+}
+
+.img {
+  width: 50%;
+  height: 50%;
+}
+
 </style>

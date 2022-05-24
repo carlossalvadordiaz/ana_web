@@ -1,17 +1,19 @@
 <template>
- <div>
+ <div class="fondo">
 
-
+<div class="imagen" v-if="this.terminado == true">
+  <img style="width: 100%; height: 100%" alt="animales" src="../assets/animales_test.jpg">
+</div>
    <div v-if="!empezado" class="animales">
-    <img class="img" alt="animales" src="../assets/animales_test.jpg">
+    <!-- <img class="img" alt="animales" src="../assets/animales_test.jpg"> -->
     <h1>Descubre cual es tu animal de poder</h1>
     <h2>Las respuestas van en escala del 1 al 7 donde 1 es nada/nunca y 7 es siempre/mucho</h2>
-    <p style="cursor: pointer"  @click="empezado = true; preguntas[0].seleccionada = true">Comenzar el test</p>
+    <p style="cursor: pointer; "  @click="empezado = true ; preguntas[0].seleccionada = true"><span style="border: 1px solid black; padding: 3px; margin;">Comenzar el test</span></p>
   </div>
 <div>
-<div  v-for="(pregunta, id) in preguntas" :key="id" >
+<div class="preguntas"  v-for="(pregunta, id) in preguntas" :key="id" >
   <div v-if="pregunta.seleccionada != false">
-    <img class="img" :src="require(`../assets/todos.jpg`)" alt="animales">
+    <!-- <img class="img todos" :src="require(`../assets/todos.jpg`)" alt="animales"> -->
     <h3>1 - nada / nunca  |  7 - Mucho / siempre</h3>
     <div style="max-width:900px; margin: 0 auto">
     <h1>{{pregunta.texto}}</h1>
@@ -41,7 +43,9 @@
   <h2>Tu animal de poder es ..</h2>
   <h1>{{animal.nombre.toUpperCase()}}</h1>
   <img class="img" :src="require(`../assets/${animal.nombre}.jpg`)">
-  <div style="max-width: 900px; margin: 0 auto"><h3>{{animal.descripcion}}.</h3></div>
+  <div style="max-width: 50%; margin: 0 auto"><h3>{{animal.descripcion}}.</h3></div>
+
+  <router-link to="/">Volver al inicio</router-link>
 </div>
 </div>
 
@@ -54,6 +58,7 @@ export default {
     return {
       wp: "@/assets/wallp.jpg",
       empezado: false,
+      terminado: true,
       primera: null,
       segunda: null,
       tercera: null,
@@ -159,7 +164,7 @@ export default {
         },
         {
           numero: 6,
-          texto: "¿Eres cotilla?",
+          texto: "¿Te consideras una persona cotilla?",
           model: null,
           seleccionada: false,
           animal: "aguila"
@@ -313,6 +318,7 @@ export default {
     },
     terminarTest() {
       this.resultados = true
+      this.terminado = !this.terminado
       this.preguntas[this.preguntas.length -1].seleccionada = false
       console.log(this.animales);
             const max = this.animales.reduce((prev, current) => (prev.puntos > current.puntos) ? prev : current)
@@ -325,9 +331,25 @@ export default {
 </script>
 
 <style scoped>
-.img {
-  max-width: 100%;
-  height: 50vh;
-  opacity: 0.8;
+
+.fondo {
+  /* background-image: url("../assets/animales_test.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;  */
+  /* height: 50vh; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
+.imagen {
+  width: 100%;
+  height: 70vh;
+}
+
+.img {
+  width: 50%;
+  height: 50%;
+}
+
 </style>
