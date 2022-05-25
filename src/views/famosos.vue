@@ -8,7 +8,7 @@
     <!-- <img class="img" alt="animales" src="../assets/animales_test.jpg"> -->
     <h1>Descubre qué famoso te representa</h1>
     <h2>Las respuestas van en escala del 1 al 7 donde 1 es nada/nunca y 7 es siempre/mucho</h2>
-    <p style="cursor: pointer; "  @click="empezado = true ; preguntas[0].seleccionada = true"><span style="border: 1px solid black; padding: 3px; margin;">Comenzar el test</span></p>
+    <button @click="empezado = true ; preguntas[0].seleccionada = true" class="button-74" role="button">Comenzar el test</button>
   </div>
 <div>
 <div  v-for="(pregunta, id) in preguntas" :key="id" >
@@ -29,23 +29,26 @@
 <br>
 <hr>
     <div class="next" v-if="!final">
-      <button :disabled="!isCheck" @click="siguientePregunta(pregunta, pregunta.animal)">Siguiente pregunta</button>
+      <button class="button-74" role="button" :disabled="!isCheck" @click="siguientePregunta(pregunta, pregunta.animal)">Siguiente pregunta</button>
     </div>
     
     <div class="final" v-else>
-      <button @click="terminarTest()">Terminar test</button>
+      <button class="button-74" role="button" @click="terminarTest()">Terminar test</button>
     </div>
   </div>
 </div>
 
 <div class="resultado" v-if="resultados">
   <h1>Resultados del test</h1>
-  <h2>La persona que te representa es ...</h2>
+  <h2>El/la famoso/a que te representa es ...</h2>
   <h1>{{animal.nombre.toUpperCase()}}</h1>
   <img class="img" :src="require(`../assets/famosos/${animal.nombre}.jpg`)">
   <div style="max-width: 900px; margin: 0 auto"><h3>{{animal.descripcion}}.</h3></div>
 
-  <router-link to="/">Volver al inicio</router-link>
+  <!-- <router-link to="/">Volver al inicio</router-link> -->
+      <button class="button-74" role="button" ><router-link to='/'>Volver al inicio</router-link> </button>
+
+  
 </div>
 </div>
 
@@ -69,39 +72,39 @@ export default {
       isCheck: false,
       animales: [
         {
-          nombre: "ZacEfron",
+          nombre: "Zac Efron",
           puntos: 0,
-          foto: require("../assets/famosos/ZacEfron.jpg"),
+          foto: require("../assets/famosos/Zac Efron.jpg"),
           descripcion: " "
         },
         {
-          nombre: "LolaIndigo",
+          nombre: "Lola Índigo",
           puntos: 0,
-          foto: require("../assets/famosos/LolaIndigo.jpg"),
+          foto: require("../assets/famosos/Lola Índigo.jpg"),
           descripcion: " "
         },
         {
-          nombre: "MileyCyrus",
+          nombre: "Miley Cyrus",
           puntos: 0,
-          foto: require("../assets/famosos/MileyCyrus.jpg"),
+          foto: require("../assets/famosos/Miley Cyrus.jpg"),
           descripcion: ""
         },
         {
-          nombre: "WillSmith",
+          nombre: "Will Smith",
           puntos: 0,
-          foto: require("../assets/famosos/WillSmith.jpg"),
+          foto: require("../assets/famosos/Will Smith.jpg"),
           descripcion: " "
         },
         {
-          nombre: "JohnnyDepp",
+          nombre: "Johnny Depp",
           puntos: 0,
-          foto: require("../assets/famosos/JohnnyDepp.jpg"),
+          foto: require("../assets/famosos/Johnny Depp.jpg"),
           descripcion: " "
         },
         {
-          nombre: "Rosalia",
+          nombre: "Rosalía",
           puntos: 0,
-          foto: require("../assets/famosos/Rosalia.jpg"),
+          foto: require("../assets/famosos/Rosalía.jpg"),
           descripcion: " "
         },
         {
@@ -111,9 +114,9 @@ export default {
           descripcion: ""
         },
         {
-          nombre: "BadBunny",
+          nombre: "Bad Bunny",
           puntos: 0,
-          foto: require("../assets/famosos/BadBunny.jpg"),
+          foto: require("../assets/famosos/Bad Bunny.jpg"),
           descripcion: " "
         },
 
@@ -167,7 +170,7 @@ export default {
           texto: "¿Tu estado de ánimo o humor puede cambiar muy rápidamente?",
           model: null,
           seleccionada: false,
-          animal: "Jonny Dep"
+          animal: "Johnny Depp"
 
         },
         {
@@ -180,7 +183,7 @@ export default {
         },
         {
           numero: 8,
-          texto: "¿Si alguien no responde con rapidez a un mensaje comienzas a preocuparte porque piensas que has podido decir algo incorrecto?",
+          texto: "Si alguien no responde con rapidez a un mensaje, ¿comienzas a preocuparte porque piensas que has podido decir algo incorrecto?",
           model: null,
           seleccionada: false,
           animal: "Zac Efron"
@@ -188,7 +191,7 @@ export default {
         },
         {
           numero: 9,
-          texto: "¿Tus emociones te controlan más de lo que tú las controlas?",
+          texto: "¿Tus emociones te controlan más de lo que tú las controlas a ellas?",
           model: null,
           seleccionada: false,
           animal: "Zendaya",
@@ -239,7 +242,7 @@ export default {
           texto: "¿Te consideras una persona con la mente abierta?",
           model: null,
           seleccionada: false,
-          animal: "Jonny Dep",
+          animal: "Johnny Depp",
 
         },
         {
@@ -265,39 +268,39 @@ export default {
         if (element[i].type=="radio" && element[i].checked) {
           
           console.log(element[i], element[i].value);
-          let BadBunny = this.animales.find(a => a.nombre == "BadBunny");
-          let JohnnyDepp = this.animales.find(a => a.nombre == "JohnnyDepp");
-          let LolaIndigo = this.animales.find(a => a.nombre == "LolaIndigo");
-          let MileyCyrus = this.animales.find(a => a.nombre == "MileyCyrus");
-          let Rosalia = this.animales.find(a => a.nombre == "Rosalia");
-          let WillSmith = this.animales.find(a => a.nombre == "WillSmith");
-          let ZacEfron = this.animales.find(a => a.nombre == "ZacEfron");
+          let BadBunny = this.animales.find(a => a.nombre == "Bad Bunny");
+          let JohnnyDepp = this.animales.find(a => a.nombre == "Johnny Depp");
+          let LolaIndigo = this.animales.find(a => a.nombre == "Lola Índigo");
+          let MileyCyrus = this.animales.find(a => a.nombre == "Miley Cyrus");
+          let Rosalia = this.animales.find(a => a.nombre == "Rosalía");
+          let WillSmith = this.animales.find(a => a.nombre == "Will Smith");
+          let ZacEfron = this.animales.find(a => a.nombre == "Zac Efron");
           let Zendaya = this.animales.find(a => a.nombre == "Zendaya");
 
 
           switch (animal) {
-            case "BadBunny":
+            case "Bad Bunny":
               BadBunny.puntos += parseInt(element[i].value)
               break;
-            case "JohnnyDepp":
+            case "Johnny Depp":
               JohnnyDepp.puntos += parseInt(element[i].value)
               break;
-            case "LolaIndigo":
+            case "Lola Índigo":
               LolaIndigo.puntos += parseInt(element[i].value)
               break;
-            case "MileyCyrus":
+            case "Miley Cyrus":
               MileyCyrus.puntos += parseInt(element[i].value)
               break;
-            case "WillSmith":
+            case "Will Smith":
               WillSmith.puntos += parseInt(element[i].value)
               break;
             case "Zendaya":
               Zendaya.puntos += parseInt(element[i].value)
               break;
-            case "ZacEfron":
+            case "Zac Efron":
               ZacEfron.puntos += parseInt(element[i].value)
               break;
-            case "Rosalia":
+            case "Rosalía":
               Rosalia.puntos += parseInt(element[i].value)
               break;
 
@@ -357,6 +360,41 @@ export default {
 .img {
   width: 50%;
   height: 50%;
+}
+.button-74 {
+  background-color: #fbeee0;
+  border: 2px solid #422800;
+  border-radius: 30px;
+  box-shadow: #422800 4px 4px 0 0;
+  color: #422800;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0 18px;
+  line-height: 50px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-top: 5px;
+}
+
+.button-74:hover {
+  background-color: #fff;
+}
+
+.button-74:active {
+  box-shadow: #422800 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+  .button-74 {
+    min-width: 120px;
+    padding: 0 25px;
+  }
 }
 
 </style>

@@ -31,24 +31,28 @@ export default {
 <style scoped>
 
 .hello {
+  margin-top: 5%;
   width: 100%;
   position: absolute;
-  top: 15%;
+  top: 5%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: black;
   text-shadow: 1px 1px #302f2f;
+  z-index: -1;
 }
 h1 {
-  font-size: 50px;
-	font-weight: 1200;
+  font-size: 3rem;
+	/* font-weight: 1200; */
   color: whitesmoke;
    -webkit-text-stroke: 1px black;
    font-style: oblique;
    background-color: aliceblue;
 }
+
+
 h2 {
-  font-size: 30px;
+  font-size: 1.6rem;
 	font-weight: 700;
   color: whitesmoke;
    -webkit-text-stroke: 0.5px black;
@@ -76,5 +80,13 @@ li {
 a {
   color: black;
   
+}
+@media ( max-width: 1400px ) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1rem;
+  }
 }
 </style>

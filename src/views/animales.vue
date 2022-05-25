@@ -6,9 +6,10 @@
 </div>
    <div v-if="!empezado" class="animales">
     <!-- <img class="img" alt="animales" src="../assets/animales_test.jpg"> -->
-    <h1>Descubre cual es tu animal de poder</h1>
+    <h1>Descubre cuál es tu animal de poder</h1>
     <h2>Las respuestas van en escala del 1 al 7 donde 1 es nada/nunca y 7 es siempre/mucho</h2>
-    <p style="cursor: pointer; "  @click="empezado = true ; preguntas[0].seleccionada = true"><span style="border: 1px solid black; padding: 3px; margin;">Comenzar el test</span></p>
+    <!-- <p style="cursor: pointer; "  @click="empezado = true ; preguntas[0].seleccionada = true"><span style="border: 1px solid black; padding: 3px; margin;">Comenzar el test</span></p> -->
+    <button @click="empezado = true ; preguntas[0].seleccionada = true" class="button-74" role="button">Comenzar el test</button>
   </div>
 <div>
 <div class="preguntas"  v-for="(pregunta, id) in preguntas" :key="id" >
@@ -29,11 +30,11 @@
 <br>
 <hr>
     <div class="next" v-if="!final">
-      <button :disabled="!isCheck" @click="siguientePregunta(pregunta, pregunta.animal)">Siguiente pregunta</button>
-    </div>
+<button class="button-74" role="button" :disabled="!isCheck" @click="siguientePregunta(pregunta, pregunta.animal)">Siguiente pregunta</button>    
+</div>
     
     <div class="final" v-else>
-      <button @click="terminarTest()">Terminar test</button>
+      <button class="button-74" role="button" @click="terminarTest()">Terminar test</button>
     </div>
   </div>
 </div>
@@ -45,7 +46,7 @@
   <img class="img" :src="require(`../assets/${animal.nombre}.jpg`)">
   <div style="max-width: 50%; margin: 0 auto"><h3>{{animal.descripcion}}.</h3></div>
 
-  <router-link to="/">Volver al inicio</router-link>
+  <button class="button-74" role="button" ><router-link to='/'>Volver al inicio</router-link> </button>
 </div>
 </div>
 
@@ -69,51 +70,51 @@ export default {
       isCheck: false,
       animales: [
         {
-          nombre: "oso",
+          nombre: "Oso",
           puntos: 0,
-          foto: require("../assets/oso.jpg"),
+          foto: require("../assets/Oso.jpg"),
           descripcion: "El oso es un animal que inspira fortaleza. Su apabullante envergadura puede resultar intimidatoria y siempre infunde respeto.  Nos llama a encontrar nuestra propia fuerza interior y a conectar con la fuente de poder que nos sustenta. Inspira a aquellas almas que necesitan reunir todo el valor y el coraje precisos para hacer frente a la adversidad. Les vincula directamente con el elemento tierra, ayudándoles a expresar su parte más salvaje y ancestral. Cuando te sientas débil o afligido, invoca la imagen del oso y conecta con su espíritu, te ayudará a despertar la valentía."
         },
         {
-          nombre: "mariposa",
+          nombre: "Mariposa",
           puntos: 0,
-          foto: require("../assets/mariposa.jpg"),
+          foto: require("../assets/Mariposa.jpg"),
           descripcion: " Este animal de poder invita a aquellos que tienen un vínculo a aportar la alegría y felicidad en sus vidas. Las mariposas tienen a menudo colores vivos. Por extensión, están asociadas a la vivacidad y a la luminosidad. El mensaje de este animal tótem es el de aclarar y colorear tu vida. Posiblemente es hora de expresarte más plenamente y de mostrar tu personalidad coloreada."
         },
         {
-          nombre: "lobo",
+          nombre: "Lobo",
           puntos: 0,
-          foto: require("../assets/lobo.jpg"),
+          foto: require("../assets/Lobo.jpg"),
           descripcion: "La fuerza del animal espiritual y tótem del lobo hace nacer el instinto, la inteligencia, el apetito de libertad y la consciencia de la importancia de los vínculos sociales. Este animal puede simbolizar también el miedo de ser amenazado y la falta de confianza."
         },
         {
-          nombre: "koala",
+          nombre: "Koala",
           puntos: 0,
-          foto: require("../assets/koala.jpg"),
+          foto: require("../assets/Koala.jpg"),
           descripcion: "El koala como animal de poder, tiene un significado de conexión con la tierra, la protección, el recreamiento de la calma y la confianza que da la tranquilidad y la paz. Las personas con un tótem Koala son gente agradable, amigable y amistosa, les afectan tanto las emociones de los demás, con los que conectan mucho, que luego necesitan un hogar confortable y cómodo para despejar su cerebro de todo ello. Son animales que buscan la comodidad en su entorno."
         },
         {
-          nombre: "araña",
+          nombre: "Araña",
           puntos: 0,
-          foto: require("../assets/araña.jpg"),
+          foto: require("../assets/Araña.jpg"),
           descripcion: " La araña como animal de poder significa sabiduría profunda, invita a ver la vida desde una perspectiva elevada y ver los ciclos que hemos pasado en ella con análisis positivo. La araña es un tótem de astucia, progresión cíclica, renacimiento y muerte, protección y poder sobre el destino."
         },
         {
-          nombre: "tiburon",
+          nombre: "Tiburón",
           puntos: 0,
-          foto: require("../assets/tiburon.jpg"),
+          foto: require("../assets/Tiburón.jpg"),
           descripcion: "Las personas con el tótem del tiburón son extremadamente impulsadas y se mueven continuamente hacia adelante. Se encuentran con la vida en plenitud y prefieren experimentarlo todo con una exuberancia innegable. La gente con este espíritu animal está generalmente en un estado constante de renovación."
         },
         {
-          nombre: "jaguar",
+          nombre: "Jaguar",
           puntos: 0,
-          foto: require("../assets/jaguar.jpg"),
+          foto: require("../assets/Jaguar.jpg"),
           descripcion: "Aquellos que tienen el jaguar como animal de poder son apasionados, confiados y poseen una comprensión más profunda de la vida. Son capaces de aceptar el cambio con gracia y dignidad, tienden a ser creativos, a ver más fácilmente la escena en su conjunto y a dejarse guiar por la intuición sin dudarlo"
         },
         {
-          nombre: "aguila",
+          nombre: "Águila",
           puntos: 0,
-          foto: require("../assets/aguila.jpg"),
+          foto: require("../assets/Águila.jpg"),
           descripcion: "Aquellos que tengan al águila como animal de poder, tendrán una gran responsabilidad en su vida: andar por el camino de la iluminación para poder iluminar a otros. El águila es el símbolo de la altura y también de la conexión con lo divino por su proximidad con el sol.  Los que tienen el águila como animal de poder son valientes, fuertes y nobles."
         },
 
@@ -125,7 +126,7 @@ export default {
           texto: "¿A menudo te quedas tan absorto en tus pensamientos que ignoras el entorno que te rodea o te olvidas de él?",
           model: null,
           seleccionada: false,
-          animal: "oso",
+          animal: "Oso",
           puntos: 0
 
         },
@@ -134,7 +135,7 @@ export default {
           texto: "¿Sueles probar o hacer cosas solo por simple curiosidad?",
           model: null,
           seleccionada: false,
-          animal: "aguila",
+          animal: "Águila",
           puntos: 0
         },
         {
@@ -142,7 +143,7 @@ export default {
           texto: "¿Sueles iniciar las conversaciones?",
           model: null,
           seleccionada: false,
-          animal: "jaguar",
+          animal: "Jaguar",
           puntos: 0
 
         },
@@ -151,15 +152,15 @@ export default {
           texto: "¿Luchas por tus sueños hasta el final?",
           model: null,
           seleccionada: false,
-          animal: "mariposa"
+          animal: "Mariposa"
 
         },
         {
           numero: 5,
-          texto: "¿Prefieres conseguir las cosas por ti mismo a que te lo den todo hecho?",
+          texto: "¿Prefieres conseguir las cosas por tí mismo a que te lo den todo hecho?",
           model: null,
           seleccionada: false,
-          animal: "araña"
+          animal: "Araña"
 
         },
         {
@@ -167,7 +168,7 @@ export default {
           texto: "¿Te consideras una persona cotilla?",
           model: null,
           seleccionada: false,
-          animal: "aguila"
+          animal: "Águila"
 
         },
         {
@@ -175,7 +176,7 @@ export default {
           texto: "¿Prefieres quedarte en casa antes que salir de fiesta?",
           model: null,
           seleccionada: false,
-          animal: "oso"
+          animal: "Oso"
 
         },
         {
@@ -183,7 +184,7 @@ export default {
           texto: "¿Te consideras fiel?",
           model: null,
           seleccionada: false,
-          animal: "tiburon"
+          animal: "Tiburón"
 
         },
         {
@@ -191,7 +192,7 @@ export default {
           texto: "¿Sueles mentir?",
           model: null,
           seleccionada: false,
-          animal: "araña",
+          animal: "Araña",
 
         },
         {
@@ -199,7 +200,7 @@ export default {
           texto: "¿Lloras siempre que lo necesitas?",
           model: null,
           seleccionada: false,
-          animal: "koala",
+          animal: "Koala",
 
         },
         {
@@ -207,7 +208,7 @@ export default {
           texto: "Si tienes un examen, ¿cuánto te lo preparas?",
           model: null,
           seleccionada: false,
-          animal: "jaguar",
+          animal: "Jaguar",
 
         },
         {
@@ -215,7 +216,7 @@ export default {
           texto: "¿Cuál es tu capacidad de concentración?",
           model: null,
           seleccionada: false,
-          animal: "tiburon",
+          animal: "Tiburón",
 
         },
         {
@@ -223,15 +224,15 @@ export default {
           texto: "¿Te consideras protector de la gente a la que quieres?",
           model: null,
           seleccionada: false,
-          animal: "lobo",
+          animal: "Lobo",
 
         },
         {
           numero: 14,
-          texto: "¿Prefieres la compañia a estar solo?",
+          texto: "¿Prefieres la compañía a estar solo?",
           model: null,
           seleccionada: false,
-          animal: "lobo",
+          animal: "Lobo",
 
         },
         {
@@ -239,7 +240,7 @@ export default {
           texto: "¿Te consideras una persona perezosa?",
           model: null,
           seleccionada: false,
-          animal: "koala",
+          animal: "Koala",
 
         },
       ],
@@ -257,39 +258,39 @@ export default {
         if (element[i].type=="radio" && element[i].checked) {
           
           console.log(element[i], element[i].value);
-          let koala = this.animales.find(a => a.nombre == "koala");
-          let lobo = this.animales.find(a => a.nombre == "lobo");
-          let mariposa = this.animales.find(a => a.nombre == "mariposa");
-          let oso = this.animales.find(a => a.nombre == "oso");
-          let aguila = this.animales.find(a => a.nombre == "aguila");
-          let araña = this.animales.find(a => a.nombre == "araña");
-          let jaguar = this.animales.find(a => a.nombre == "jaguar");
-          let tiburon = this.animales.find(a => a.nombre == "tiburon");
+          let koala = this.animales.find(a => a.nombre == "Koala");
+          let lobo = this.animales.find(a => a.nombre == "Lobo");
+          let mariposa = this.animales.find(a => a.nombre == "Mariposa");
+          let oso = this.animales.find(a => a.nombre == "Oso");
+          let aguila = this.animales.find(a => a.nombre == "Águila");
+          let araña = this.animales.find(a => a.nombre == "Araña");
+          let jaguar = this.animales.find(a => a.nombre == "Jaguar");
+          let tiburon = this.animales.find(a => a.nombre == "Tiburón");
 
 
           switch (animal) {
-            case "koala":
+            case "Koala":
               koala.puntos += parseInt(element[i].value)
               break;
-            case "lobo":
+            case "Lobo":
               lobo.puntos += parseInt(element[i].value)
               break;
-            case "mariposa":
+            case "Mariposa":
               mariposa.puntos += parseInt(element[i].value)
               break;
-            case "oso":
+            case "Oso":
               oso.puntos += parseInt(element[i].value)
               break;
-            case "araña":
+            case "Araña":
               araña.puntos += parseInt(element[i].value)
               break;
-            case "tiburon":
+            case "Tiburón":
               tiburon.puntos += parseInt(element[i].value)
               break;
-            case "jaguar":
+            case "Jaguar":
               jaguar.puntos += parseInt(element[i].value)
               break;
-            case "aguila":
+            case "Águila":
               aguila.puntos += parseInt(element[i].value)
               break;
 
@@ -352,4 +353,38 @@ export default {
   height: 50%;
 }
 
+.button-74 {
+  background-color: #fbeee0;
+  border: 2px solid #422800;
+  border-radius: 30px;
+  box-shadow: #422800 4px 4px 0 0;
+  color: #422800;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0 18px;
+  line-height: 50px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-74:hover {
+  background-color: #fff;
+}
+
+.button-74:active {
+  box-shadow: #422800 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+  .button-74 {
+    min-width: 120px;
+    padding: 0 25px;
+  }
+}
 </style>

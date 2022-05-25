@@ -1,16 +1,16 @@
 <template>
   <div class="home">
     <img class="img" alt="Vue logo" src="../assets/animales.jpg">
-    <HelloWorld msg="Bienvenido/a, ¿Quieres conocer tu personalidad?"/>
+    <HelloWorld msg="Bienvenido/a, ¿Quiéres conocer tu personalidad?"/>
     <div class="animal">
-      <h4>CONOCE TU ANIMAL DE PODER</h4>
+      <h3>TU ANIMAL DE PODER</h3>
       <img class="card" alt="Vue logo" src="../assets/todos.jpg">
           <ul>
             <li><router-link to="/animales"><button class="button-74" role="button">Haz click aquí</button></router-link></li>
           </ul>
     </div>
     <div class="animal">
-      <h4><b> EL SIGNO DEL ZODIACO DE TU MEDIA NARANJA</b></h4>
+      <h4 style="margin-bottom: 0.5rem"><b>SIGNO DEL ZODIACO DE TU MEDIA NARANJA</b></h4>
       <img class="card" alt="Vue logo" src="../assets/zod.jpg">
       <ul>
         <li><router-link to="/zodiaco"><button class="button-74" role="button">Haz click aquí</button></router-link></li>
@@ -18,7 +18,7 @@
       
     </div>
     <div class="animal">
-      <h4>CONOCE QUÉ FAMOSO TE REPRESENTA</h4>
+      <h3>QUÉ FAMOSO TE REPRESENTA</h3>
       <img class="card" alt="Vue logo" src="../assets/fam.jpg">
       
         <ul>
@@ -97,10 +97,11 @@ li {
   width: 100%;
   margin: 0 auto;
   height: 70vh;
+  z-index: -1;
   /* opacity: 0.7; */
 }
 
-h4, h5 {
+h3, h4, h5 {
   text-shadow: 1px 1px #030303;
 }
 

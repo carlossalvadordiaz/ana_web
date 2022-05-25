@@ -3,12 +3,13 @@
     <div class="nav">
   <ul>
     <li><router-link to="/">Volver al inicio</router-link></li>
-    <li><router-link to="/animales">Animales de poder</router-link>
+    
+    <li><router-link to="/animales">Animal de poder</router-link>
     <li>
       <router-link to="/zodiaco">Zodiaco</router-link>
     </li>
     <li><router-link to="/famosos">Famosos</router-link></li>
-    <li><router-link to="/about">Sobre mi</router-link></li>
+    <li><router-link to="/about">Sobre mí</router-link></li>
   </ul>
 </div>
     <!-- <div id="nav">
@@ -40,7 +41,8 @@
 /* This class is applied to the containing div <div class="nav"> and is used to set the background color and height of the navbar */
 .nav {
   background: lightblue;
-  height: 60px; /* set same as height & line-height below */
+  height: 4rem; /* set same as height & line-height below */
+  /* margin-bottom: 5%; */
 }
 
 /* This rule centers the nav items verticaly in the bar with the height and line height properties. Spacing between the nav items is controlled by setting right and left padding.  */
