@@ -1,17 +1,17 @@
 <template>
   <div class="home">
-    <img class="img" alt="Vue logo" src="../assets/animales.jpg">
+    <img class="img" alt="Vue logo" src="@/assets/animales.jpg">
     <HelloWorld msg="Bienvenido/a, ¿Quiéres conocer tu personalidad?"/>
     <div class="animal">
       <h3>TU ANIMAL DE PODER</h3>
-      <img class="card" alt="Vue logo" src="../assets/todos.jpg">
+      <img class="card" alt="Vue logo" src="@/assets/todos.jpg">
           <ul>
             <li><router-link to="/animales"><button class="button-74" role="button">Haz click aquí</button></router-link></li>
           </ul>
     </div>
     <div class="animal">
       <h4 style="margin-bottom: 0.5rem"><b>SIGNO DEL ZODIACO DE TU MEDIA NARANJA</b></h4>
-      <img class="card" alt="Vue logo" src="../assets/zod.jpg">
+      <img class="card" alt="Vue logo" src="@/assets/zod.jpg">
       <ul>
         <li><router-link to="/zodiaco"><button class="button-74" role="button">Haz click aquí</button></router-link></li>
       </ul>
@@ -19,7 +19,7 @@
     </div>
     <div class="animal">
       <h3>QUÉ FAMOSO TE REPRESENTA</h3>
-      <img class="card" alt="Vue logo" src="../assets/fam.jpg">
+      <img class="card" alt="Vue logo" src="@/assets/fam.jpg">
       
         <ul>
           <li><router-link to="/famosos"><button class="button-74" role="button">Haz click aquí</button></router-link></li>

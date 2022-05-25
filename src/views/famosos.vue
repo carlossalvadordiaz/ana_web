@@ -2,10 +2,10 @@
  <div class="fondo">
 
 <div class="imagen" v-if="this.terminado == true">
-  <img style="width: 100%; height: 100%" alt="animales" src="../assets/famosos_test.jpg">
+  <img style="width: 100%; height: 100%" alt="animales" src="@/assets/famosos_test.jpg">
 </div>
    <div v-if="!empezado" class="animales">
-    <!-- <img class="img" alt="animales" src="../assets/animales_test.jpg"> -->
+    <!-- <img class="img" alt="animales" src="@/assets/animales_test.jpg"> -->
     <h1>Descubre qué famoso te representa</h1>
     <h2>Las respuestas van en escala del 1 al 7 donde 1 es nada/nunca y 7 es siempre/mucho</h2>
     <button @click="empezado = true ; preguntas[0].seleccionada = true" class="button-74" role="button">Comenzar el test</button>
@@ -13,7 +13,7 @@
 <div>
 <div  v-for="(pregunta, id) in preguntas" :key="id" >
   <div v-if="pregunta.seleccionada != false">
-    <!-- <img class="img todos" :src="require(`../assets/todos.jpg`)" alt="animales"> -->
+    <!-- <img class="img todos" :src="require(`@/assets/todos.jpg`)" alt="animales"> -->
     <h3>1 - nada / nunca  |  7 - Mucho / siempre</h3>
     <div style="max-width:900px; margin: 0 auto">
     <h1>{{pregunta.texto}}</h1>
@@ -42,7 +42,7 @@
   <h1>Resultados del test</h1>
   <h2>El/la famoso/a que te representa es ...</h2>
   <h1>{{animal.nombre.toUpperCase()}}</h1>
-  <img class="img" :src="require(`../assets/famosos/${animal.nombre}.jpg`)">
+  <img class="img" :src="require(`@/assets/famosos/${animal.nombre}.jpg`)">
   <div style="max-width: 900px; margin: 0 auto"><h3>{{animal.descripcion}}.</h3></div>
 
   <!-- <router-link to="/">Volver al inicio</router-link> -->
@@ -74,49 +74,49 @@ export default {
         {
           nombre: "Zac Efron",
           puntos: 0,
-          foto: require("../assets/famosos/Zac Efron.jpg"),
+          foto: require("@/assets/famosos/Zac Efron.jpg"),
           descripcion: " "
         },
         {
           nombre: "Lola Índigo",
           puntos: 0,
-          foto: require("../assets/famosos/Lola Índigo.jpg"),
+          foto: require("@/assets/famosos/Lola Índigo.jpg"),
           descripcion: " "
         },
         {
           nombre: "Miley Cyrus",
           puntos: 0,
-          foto: require("../assets/famosos/Miley Cyrus.jpg"),
+          foto: require("@/assets/famosos/Miley Cyrus.jpg"),
           descripcion: ""
         },
         {
           nombre: "Will Smith",
           puntos: 0,
-          foto: require("../assets/famosos/Will Smith.jpg"),
+          foto: require("@/assets/famosos/Will Smith.jpg"),
           descripcion: " "
         },
         {
           nombre: "Johnny Depp",
           puntos: 0,
-          foto: require("../assets/famosos/Johnny Depp.jpg"),
+          foto: require("@/assets/famosos/Johnny Depp.jpg"),
           descripcion: " "
         },
         {
           nombre: "Rosalía",
           puntos: 0,
-          foto: require("../assets/famosos/Rosalía.jpg"),
+          foto: require("@/assets/famosos/Rosalía.jpg"),
           descripcion: " "
         },
         {
           nombre: "Zendaya",
           puntos: 0,
-          foto: require("../assets/famosos/Zendaya.jpg"),
+          foto: require("@/assets/famosos/Zendaya.jpg"),
           descripcion: ""
         },
         {
           nombre: "Bad Bunny",
           puntos: 0,
-          foto: require("../assets/famosos/Bad Bunny.jpg"),
+          foto: require("@/assets/famosos/Bad Bunny.jpg"),
           descripcion: " "
         },
 
@@ -343,7 +343,7 @@ export default {
 
 <style scoped>
 .fondo {
-  /* background-image: url("../assets/animales_test.jpg");
+  /* background-image: url("@/assets/animales_test.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;  */

@@ -1,18 +1,18 @@
 <template>
  <div class="fondo">
 <div class="imagen" v-if="this.terminado == true">
-  <img style="width: 100%; height: 100%" alt="animales" src="../assets/zodiaco.jpg">
+  <img style="width: 100%; height: 100%" alt="animales" src="@/assets/zodiaco.jpg">
 </div>
 
    <div v-if="!empezado" class="animales">
-    <!-- <img class="img" alt="animales" src="../assets/zodiaco.jpg"> -->
+    <!-- <img class="img" alt="animales" src="@/assets/zodiaco.jpg"> -->
     <h1>Descubre de qué signo del zodiaco es tu pareja ideal</h1>
     <button @click="empezado = true ; preguntas[0].seleccionada = true" class="button-74" role="button">Comenzar el test</button>
   </div>
 <div>
 <div  v-for="(pregunta, id) in preguntas" :key="id" >
   <div v-if="pregunta.seleccionada != false">
-    <!-- <img class="img" :src="require(`../assets/zodiaco2.jpg`)" alt="animales"> -->
+    <!-- <img class="img" :src="require(`@/assets/zodiaco2.jpg`)" alt="animales"> -->
     <div style="max-width:900px; margin: 0 auto">
     <h1>{{pregunta.texto}}</h1>
     </div>
@@ -44,7 +44,7 @@
   <h1>Resultados del test</h1>
   <h2>Tu signo del zodiaco más compatible es...</h2>
   <h1>{{animal.nombre.toUpperCase()}}</h1>
-  <img class="img" :src="require(`../assets/zodiaco/${animal.nombre}.jpg`)">
+  <img class="img" :src="require(`@/assets/zodiaco/${animal.nombre}.jpg`)">
   <div style="max-width: 900px; margin: 0 auto"><h3>{{animal.descripcion}}.</h3></div>
 
   <button class="button-74" role="button" ><router-link to='/'>Volver al inicio</router-link> </button>
@@ -73,73 +73,73 @@ export default {
         {
           nombre: "Aries",
           puntos: 0,
-          foto: require("../assets/zodiaco/Aries.jpg"),
+          foto: require("@/assets/zodiaco/Aries.jpg"),
           descripcion: "Aries es el signo solar más fiel cuando está de verdad enamorado. Eso sí, necesita un amor novelesco, por lo que hay que estar alerta, su promesa de total lealtad es sincera, pero puede llevarle a dejarte e ir en busca de otro amor si no mantienes vivas sus ilusiones."
         },
         {
           nombre: "Tauro",
           puntos: 0,
-          foto: require("../assets/zodiaco/Tauro.jpg"),
+          foto: require("@/assets/zodiaco/Tauro.jpg"),
           descripcion: " Lo mejor de Tauro es la lealtad, su dedicación perdurable y su corazón fiel. Tierno, suave y protector."
         },
         {
           nombre: "Géminis",
           puntos: 0,
-          foto: require("../assets/zodiaco/Géminis.jpg"),
+          foto: require("@/assets/zodiaco/Géminis.jpg"),
           descripcion: "La armonía perfecta con Géminis no va a existir. Debes tener alma de jugadora y saber que no siempre tendrás la jugada que quieres, pero debes apostar. Recuerda siempre que Géminis tiene la necesidad constante de disfrazar sus emociones y sus intenciones, por lo que siempre sus acciones serán duales. Buscarán confundirte."
         },
         {
           nombre: "Cáncer",
           puntos: 0,
-          foto: require("../assets/zodiaco/Cáncer.jpg"),
+          foto: require("@/assets/zodiaco/Cáncer.jpg"),
           descripcion: "Su corazón es tierno y afectuoso, aunque se empeña en llevar una coraza. Posiblemente rebosa de sentimientos y se siente vulnerable. Recuerda: se meterá bajo su concha de cangrejo y deberás estar atenta para cuando asome de nuevo."
         },
         {
           nombre: "Leo",
           puntos: 0,
-          foto: require("../assets/zodiaco/Leo.jpg"),
+          foto: require("@/assets/zodiaco/Leo.jpg"),
           descripcion: "Los Leo están tan inmersos en sí mismos que pueden ser de una franqueza y de una falta de tacto brutales, aunque la maldad no entra en su estructura, por lo que, aunque te cueste creerlo, no hay auténtica crueldad en sus actos. Tiene una enorme necesidad de mandar y de ser amado por aquellos a quienes manda."
         },
         {
           nombre: "Virgo",
           puntos: 0,
-          foto: require("../assets/zodiaco/Virgo.jpg"),
+          foto: require("@/assets/zodiaco/Virgo.jpg"),
           descripcion: "Virgo está dispuesto/a a estar solo/a. Sin demasiadas nostalgias ni traumas emocionales. Eso sí, cuando se pone, es experto/a en la seducción sutil. Su regla es un interés distante. Es crítico y minucioso para todo, por lo que se tomará un tiempo preciso en la búsqueda del amor."
         },
         {
           nombre: "Libra",
           puntos: 0,
-          foto: require("../assets/zodiaco/Libra.jpg"),
+          foto: require("@/assets/zodiaco/Libra.jpg"),
           descripcion: "Su atracción es lógica y real. No tiene nada de magia, es el resultado del sentido común. Aunque hasta llegar a ese punto, le ha dado muchas vueltas a las cosas. Eso sí, cupido es un becario ante un Libra que innatamente lleva el talento de la seducción dentro: ellos inventaron el romance."
         },
         {
           nombre: "Escorpio",
           puntos: 0,
-          foto: require("../assets/zodiaco/Escorpio.jpg"),
+          foto: require("@/assets/zodiaco/Escorpio.jpg"),
           descripcion: " Escorpio parece tranquilo y sereno. Exacto, parece. Su superficie puede ser impasible, pero por dentro es pura pasión. Y no sólo en el amor. Asegúrate y ve con cuidado. Su picadura puede ser difícil de curar."
         },
         {
           nombre: "Sagitario",
           puntos: 0,
-          foto: require("../assets/zodiaco/Sagitario.jpg"),
-          descripcion: "Su vida romántica la vive en un nivel superficial, pero lo plantea con sinceridad. Busca relaciones frívolas. No te sorprendas si le da por contarte las múltiples aventuras que ha tenido. Pero tranquilo/a, si tienes claro que es tu media naranja y le da por huir, recuerda: es torpe. Probablemente tropezará y puedas alcanzarle.."
+          foto: require("@/assets/zodiaco/Sagitario.jpg"),
+          descripcion: "Su vida romántica la vive en un nivel superficial, pero lo plantea con sinceridad. Busca relaciones frívolas. No te sorprendas si le da por contarte las múltiples aventuras que ha tenido. Pero tranquilo/a, si tienes claro que es tu media naranja y le da por huir, recuerda: es torpe. Probablemente tropezará y puedas alcanzarle@"
         },
         {
           nombre: "Capricornio",
           puntos: 0,
-          foto: require("../assets/zodiaco/Capricornio.jpg"),
+          foto: require("@/assets/zodiaco/Capricornio.jpg"),
           descripcion: "Sí, el signo Capricornio es un romántico incurable. Te cuesta creerlo porque su comportamiento tranquilo, sus acciones prácticas y la seriedad en sus intenciones harán que a veces sufras sus actitudes bruscas. Su humor irónico, en ocasiones te parecerá aburridísimo. Y no, no eres tú, es que ciertamente hace bromas secas y retorcidas que nosotras tampoco entenderíamos"
         },
         {
           nombre: "Piscis",
           puntos: 0,
-          foto: require("../assets/zodiaco/Piscis.jpg"),
+          foto: require("@/assets/zodiaco/Piscis.jpg"),
           descripcion: "A Piscis le encanta el romanticismo. Son una especie de esponja espiritual, pero eso puede ser psicológicamente agotador. Son capaces de meterse en los zapatos de todos, están todo el día escuchando a quienes están a su alrededor. Esto incluye lo alegre, lo triste, lo terrible, lo oscuro, lo luminoso..."
         },
         {
           nombre: "Acuario",
           puntos: 0,
-          foto: require("../assets/zodiaco/Acuario.jpg"),
+          foto: require("@/assets/zodiaco/Acuario.jpg"),
           descripcion: "Su pareja ideal es la que se convierte es su gran amigo/a. Esa es la base del amor para Acuario. A veces, puede que te sientes algo abandonado/a y es que, una vez que está estable en pareja, considera que ya puede concentrarse en otras cosas que en ese momento le parecen más importantes. Pero no hagas un drama, eso no significa que haya dejado de quererte. Si eres tú quien le rompe el corazón, Acuario procurará que se rompa en silencio. Que ni su familia ni sus amigos oigan ruido o hagan preguntas."
         },
 
@@ -649,7 +649,7 @@ export default {
 
 <style scoped>
 .fondo {
-  /* background-image: url("../assets/animales_test.jpg");
+  /* background-image: url("@/assets/animales_test.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;  */

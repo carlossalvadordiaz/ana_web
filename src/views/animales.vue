@@ -1,11 +1,12 @@
 <template>
  <div class="fondo">
+   <img :src="animales[4].foto" alt="">
 
 <div class="imagen" v-if="this.terminado == true">
-  <img style="width: 100%; height: 100%" alt="animales" src="../assets/animales_test.jpg">
+  <img style="width: 100%; height: 100%" alt="animales" src="@/assets/animales_test.jpg">
 </div>
    <div v-if="!empezado" class="animales">
-    <!-- <img class="img" alt="animales" src="../assets/animales_test.jpg"> -->
+    <!-- <img class="img" alt="animales" src="@/assets/animales_test.jpg"> -->
     <h1>Descubre cuál es tu animal de poder</h1>
     <h2>Las respuestas van en escala del 1 al 7 donde 1 es nada/nunca y 7 es siempre/mucho</h2>
     <!-- <p style="cursor: pointer; "  @click="empezado = true ; preguntas[0].seleccionada = true"><span style="border: 1px solid black; padding: 3px; margin;">Comenzar el test</span></p> -->
@@ -14,7 +15,7 @@
 <div>
 <div class="preguntas"  v-for="(pregunta, id) in preguntas" :key="id" >
   <div v-if="pregunta.seleccionada != false">
-    <!-- <img class="img todos" :src="require(`../assets/todos.jpg`)" alt="animales"> -->
+    <!-- <img class="img todos" :src="require(`@/assets/todos.jpg`)" alt="animales"> -->
     <h3>1 - nada / nunca  |  7 - Mucho / siempre</h3>
     <div style="max-width:900px; margin: 0 auto">
     <h1>{{pregunta.texto}}</h1>
@@ -41,9 +42,9 @@
 
 <div class="resultado" v-if="resultados">
   <h1>Resultados del test</h1>
-  <h2>Tu animal de poder es ..</h2>
+  <h2>Tu animal de poder es ...</h2>
   <h1>{{animal.nombre.toUpperCase()}}</h1>
-  <img class="img" :src="require(`../assets/${animal.nombre}.jpg`)">
+  <img class="img" :src="require(`@/assets/${animal.nombre}.jpg`)">
   <div style="max-width: 50%; margin: 0 auto"><h3>{{animal.descripcion}}.</h3></div>
 
   <button class="button-74" role="button" ><router-link to='/'>Volver al inicio</router-link> </button>
@@ -72,49 +73,49 @@ export default {
         {
           nombre: "Oso",
           puntos: 0,
-          foto: require("../assets/Oso.jpg"),
+          foto: require("@/assets/Oso.jpg"),
           descripcion: "El oso es un animal que inspira fortaleza. Su apabullante envergadura puede resultar intimidatoria y siempre infunde respeto.  Nos llama a encontrar nuestra propia fuerza interior y a conectar con la fuente de poder que nos sustenta. Inspira a aquellas almas que necesitan reunir todo el valor y el coraje precisos para hacer frente a la adversidad. Les vincula directamente con el elemento tierra, ayudándoles a expresar su parte más salvaje y ancestral. Cuando te sientas débil o afligido, invoca la imagen del oso y conecta con su espíritu, te ayudará a despertar la valentía."
         },
         {
           nombre: "Mariposa",
           puntos: 0,
-          foto: require("../assets/Mariposa.jpg"),
+          foto: require("@/assets/Mariposa.jpg"),
           descripcion: " Este animal de poder invita a aquellos que tienen un vínculo a aportar la alegría y felicidad en sus vidas. Las mariposas tienen a menudo colores vivos. Por extensión, están asociadas a la vivacidad y a la luminosidad. El mensaje de este animal tótem es el de aclarar y colorear tu vida. Posiblemente es hora de expresarte más plenamente y de mostrar tu personalidad coloreada."
         },
         {
           nombre: "Lobo",
           puntos: 0,
-          foto: require("../assets/Lobo.jpg"),
+          foto: require("@/assets/Lobo.jpg"),
           descripcion: "La fuerza del animal espiritual y tótem del lobo hace nacer el instinto, la inteligencia, el apetito de libertad y la consciencia de la importancia de los vínculos sociales. Este animal puede simbolizar también el miedo de ser amenazado y la falta de confianza."
         },
         {
           nombre: "Koala",
           puntos: 0,
-          foto: require("../assets/Koala.jpg"),
+          foto: require("@/assets/Koala.jpg"),
           descripcion: "El koala como animal de poder, tiene un significado de conexión con la tierra, la protección, el recreamiento de la calma y la confianza que da la tranquilidad y la paz. Las personas con un tótem Koala son gente agradable, amigable y amistosa, les afectan tanto las emociones de los demás, con los que conectan mucho, que luego necesitan un hogar confortable y cómodo para despejar su cerebro de todo ello. Son animales que buscan la comodidad en su entorno."
         },
         {
           nombre: "Araña",
           puntos: 0,
-          foto: require("../assets/Araña.jpg"),
+          foto: require("@/assets/Araña.jpg"),
           descripcion: " La araña como animal de poder significa sabiduría profunda, invita a ver la vida desde una perspectiva elevada y ver los ciclos que hemos pasado en ella con análisis positivo. La araña es un tótem de astucia, progresión cíclica, renacimiento y muerte, protección y poder sobre el destino."
         },
         {
           nombre: "Tiburón",
           puntos: 0,
-          foto: require("../assets/Tiburón.jpg"),
+          foto: require("@/assets/Tiburón.jpg"),
           descripcion: "Las personas con el tótem del tiburón son extremadamente impulsadas y se mueven continuamente hacia adelante. Se encuentran con la vida en plenitud y prefieren experimentarlo todo con una exuberancia innegable. La gente con este espíritu animal está generalmente en un estado constante de renovación."
         },
         {
           nombre: "Jaguar",
           puntos: 0,
-          foto: require("../assets/Jaguar.jpg"),
+          foto: require("@/assets/Jaguar.jpg"),
           descripcion: "Aquellos que tienen el jaguar como animal de poder son apasionados, confiados y poseen una comprensión más profunda de la vida. Son capaces de aceptar el cambio con gracia y dignidad, tienden a ser creativos, a ver más fácilmente la escena en su conjunto y a dejarse guiar por la intuición sin dudarlo"
         },
         {
           nombre: "Águila",
           puntos: 0,
-          foto: require("../assets/Águila.jpg"),
+          foto: require("@/assets/Águila.jpg"),
           descripcion: "Aquellos que tengan al águila como animal de poder, tendrán una gran responsabilidad en su vida: andar por el camino de la iluminación para poder iluminar a otros. El águila es el símbolo de la altura y también de la conexión con lo divino por su proximidad con el sol.  Los que tienen el águila como animal de poder son valientes, fuertes y nobles."
         },
 
@@ -334,7 +335,7 @@ export default {
 <style scoped>
 
 .fondo {
-  /* background-image: url("../assets/animales_test.jpg");
+  /* background-image: url("@/assets/animales_test.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;  */
