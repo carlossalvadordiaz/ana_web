@@ -1,6 +1,5 @@
 <template>
  <div class="fondo">
-   <img :src="animales[4].foto" alt="">
 
 <div class="imagen" v-if="this.terminado == true">
   <img style="width: 100%; height: 100%" alt="animales" src="@/assets/animales_test.jpg">
